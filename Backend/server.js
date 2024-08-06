@@ -94,6 +94,9 @@ app.post('/api/cars/save', async (req, res) => {
 
         console.log('Saved Data:', carSaveResult);
         const carFinds = await CarModel.find().lean().exec()
+	    res.setHeader('Access-Control-Allow-Origin', 'https://vehicle-info-center.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
         res.json({
             success: true,
             message: "Data Inserted Successfully!",
