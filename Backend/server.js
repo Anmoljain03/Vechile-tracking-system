@@ -7,6 +7,10 @@ const cors = require('cors')
 
 const app = express();
 app.use(cors())
+app.use(cors({
+  origin: 'https://vehicle-info-center.vercel.app'
+}));
+
 const PORT =  3001;
 const URI = 'mongodb+srv://honeyjain245:9Hc8lvyGRyqLp1YZ@cluster0.vafns6g.mongodb.net/vehcile-tracking-info?retryWrites=true&w=majority&appName=Cluster0';
 
