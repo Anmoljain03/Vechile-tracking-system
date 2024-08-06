@@ -18,7 +18,7 @@ const AddVehicle = ({ onAddVehicle }) => {
 
 	const handleAddVehicle = () => {
 		// Submit a new vehicle
-		axios.post("http://localhost:3001/api/cars/save", newVehicle)
+		axios.post("https://server-vehicle-info.vercel.app/api/cars/save", newVehicle)
 			.then((response) => {
 				// Notify the parent component about the new vehicle
 				console.log(response.data.data)
