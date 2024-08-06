@@ -8,12 +8,19 @@ const cors = require('cors')
 const app = express();
 app.use(cors())
 const PORT =  3001;
+const URI = 'mongodb+srv://honeyjain245:9Hc8lvyGRyqLp1YZ@cluster0.vafns6g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-// Connect to MongoDB (make sure MongoDB is running)
-mongoose.connect('mongodb://0.0.0.0/vehicle-tracking', {
+// Connect to MongoDB (make sure MongoDB is running) 
+mongoose.connect(URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
-});
+})
+.then(()=>{
+	console.log('Connected SuccessFully!')
+})
+.catch((error)=>{
+	console.log(`Error Occured During the Connection, ${error}`)
+})
 
 // Middleware
 app.use(bodyParser.json())
