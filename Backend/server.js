@@ -69,7 +69,9 @@ app.get('/api/cars', async (req, res) => {
 		res.status(500).json({ error: 'Internal Server Error' });
 	}
 });
-
+app.get('/' , async (req,res)=>{
+	res.send('I m Live!');
+})
 // Get a specific car by ID
 app.get('/api/cars/:id', async (req, res) => {
 	try {
