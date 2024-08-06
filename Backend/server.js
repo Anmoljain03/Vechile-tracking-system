@@ -6,9 +6,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 
 const app = express();
-app.use(cors())
 app.use(cors({
-  origin: 'https://vehicle-info-center.vercel.app'
+  origin: 'https://vehicle-info-center.vercel.app',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
 }));
 
 const PORT =  3001;
